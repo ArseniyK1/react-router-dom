@@ -134,3 +134,13 @@ li:hover {
   border-radius: 100px;
   cursor: pointer;
 }
+
+.one-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.one-post > p {
+  margin: 20px 0 20px 0;
+}

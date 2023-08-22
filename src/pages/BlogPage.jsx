@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+  console.log(useLocation());
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -17,6 +18,9 @@ const BlogPage = () => {
       <div className="blog">
         <h1>Blog</h1>
         <div className="posts-list">
+          <Link to="/posts/new">
+            <button>Add new post</button>
+          </Link>
           {posts.map((post) => (
             <Link key={post.id} to={`/posts/${post.id}`}>
               <li>
